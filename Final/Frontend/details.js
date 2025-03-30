@@ -822,8 +822,8 @@ function displayProducts(getDetails) {
         let recommended_for = document.createElement("p");
         recommended_for.innerHTML = `<strong>Recommended For:</strong> ${getDetails.recommended_for.join(", ")}`;
 
-// let buttondiv=document.createElement("div");
-// buttondiv.className="buttondiv";
+let buttondiv=document.createElement("div");
+buttondiv.className="buttondiv";
 
         let button = document.createElement("button");
         button.innerText = "Add to Cart";
@@ -848,12 +848,12 @@ function displayProducts(getDetails) {
 }
 
 displayProducts(getDetails)
-// const foodlist=document.getElementById("foodlist");
-// const foodDetails=document.getElementById("details");
+const foodlist=document.getElementById("foodlist");
+const foodDetails=document.getElementById("details");
 
-// function showDetails(){
-//     food_suggestions.forEach
-// }
+function showDetails(){
+    food_suggestions.forEach
+}
 
 
 // module.exports=food_suggestions;
