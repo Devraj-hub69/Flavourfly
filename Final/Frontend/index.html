@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Log in</title>
+    <link rel="stylesheet" href="userLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div id="register">
+        <form method="POST" action="/userdata" id="registerForm">
+            <div id="cross">
+                <h2>Sign up</h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div id="inputdetail">
+                <input type="text" placeholder="Full Name" id="name">
+                <input type="text" placeholder="Email" id="email">
+                <input type="text" placeholder="Enter Your Password" id="password">
+            </div>
+            <input type="checkbox" id="term" name="term" value="check">
+            <label for="term"> I agree to BiteNow's <a>Terms of Service,Privacy Policy</a> and <a>Content
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Policies</a></label>
+            <button type="submit">Create account</button>
+        </form>
+        <h3>or</h3>
+        <div id="sign_google"><img
+                src="https://pnghq.com/wp-content/uploads/free-google-logo-png-transparent-image-download-95993-768x786.png"
+                alt="google" height="20px">
+            <p>Sign in with google</p>
+        </div>
+        <br>
+        <hr>
+        <div id="lastdiv">
+            <p>Already have an account?</p><a href="login.html">Log in</a>
+        </div>
+    </div>
+    <!-- <script src="userLogin.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     <script src="index.js"></script>
+
+</body>
+
+</html>

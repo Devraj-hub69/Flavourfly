@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="restaurent.css">
+
+
+</head>
+
+
+<body>
+    <header>
+        <div id="fixed-header">
+            <div>
+                <img src="n1.jpg" id="bitenow-logo" alt="Bitenow" width="220px" >
+            </div>
+            <div id="search-container">
+                <input type="text" placeholder="Craving Something? Find your favourite dish here.....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div id="user-login">
+                <i class="fa fa-user-circle-o"></i>
+                <nav>
+                    <!-- <a id="LogIn" href="#">Log in</a> -->
+                    <button id="openModal">Login</button>
+
+                    <div id="loginModal" class="modal">
+                        <form id="loginForm">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Login</h2>
+                                <input type="text" id="email" placeholder="Enter your email" class="input-field">
+                                <input type="text" id="password" placeholder="Enter your password" class="input-field">
+                                <button class="btn">Log in</button>
+                                <p>or</p>
+                                <button class="btn email">Continue with Email</button>
+                                <button class="btn google">Sign in with Google</button>
+                                <p>New to FlavorFly? <a href="index.html">Create account</a></p>
+                            </div>
+                        </form>
+                    </div>
+                    <a id="signUp" href="index.html">Sign up</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div id="gocard"><button><i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+    <div class="sugg">
+        <div id="change">
+            <div id="bike">
+                <i class="fa-solid fa-person-biking" style="color: #c20000;"></i>
+            </div>
+            <div>
+                <span>Online delivery</span>
+            </div>
+        </div>
+
+        <div id="change2">
+            <div id="bike2">
+                <i class="fa-solid fa-champagne-glasses" style="color: #fa0032;"></i>
+            </div>
+            <div>
+                <span>Dinning out</span>
+            </div>
+        </div>
+        <div id="change3">
+            <div id="bike3">
+                <i class="fa-solid fa-utensils" style="color: #dd0e2d;"></i>
+            </div>
+            <div>
+                <span>Dinner</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="background"></div>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="slide">
+                <img src="sll1.jpg" alt="Image 1" />
+                <button class="order-now" onclick="location.href='#section1'">
+                    Order now!
+                </button>
+            </div>
+            <div class="slide">
+                <img src="sll2.jpg" alt="Image 2" />
+                <button class="explore-now" onclick="location.href='#section2'">
+                    Explore now!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="foodrow-slider">
+        <div id="slider-container">
+          <h1>Dive into Deliciousness - just a click away!</h1>
+          <button class="nav-btn" id="prev">❮</button>
+          <div id="foodrow-slider" class="fslider">
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/bf2d0e73add1c206aeeb9fec762438111727708719.png"
+                alt="biriyani"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/dish_images/197987b7ebcd1ee08f8c25ea4e77e20f1634731334.png"
+                alt="chicken"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"
+                alt="burger"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png"
+                alt="cake"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png"
+                alt="thali"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png"
+                alt="pizza"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/019409fe8f838312214d9211be010ef31678798444.jpeg"
+                alt="north"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/2b5a5b533473aada22015966f668e30e1633434990.png"
+                alt="parata"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/o2_assets/8dc39742916ddc369ebeb91928391b931632716660.png"
+                alt="dosa"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/dish_images/2de9197c25059c0d61efc8566c6919961615960350.png"
+                alt="chili"
+              />
+            </div>
+            <div>
+              <img
+                src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
+                alt="roll"
+              />
+              
+            </div>
+          </div>
+          <button class="nav-btn" id="next">❯</button>
+        </div>
+      </div>
+
+    <h1 id="section2">Explore Nearby famous Restaurants</h1>
+    <div class="restaurant-container" id="restaurant-container"></div>
+    <button id="load-more-btn">Load More</button>
+
+
+    <section class="bgf1div">
+        <div class="containerfs1">
+            <h1 class="fs1h1">FlavorFly</h1>
+            <p class="fs1text">
+                <b>FlavorFly</b> is a fast and reliable food delivery service that
+                partners with top local restaurants to bring fresh, delicious meals to
+                your doorstep in 30 minutes or less. Whether you're craving a quick
+                bite or a full meal, FlavorFly makes it easy to order online through our
+                website or mobile app. With real-time order tracking, secure payment
+                options, and a commitment to on-time delivery, FlavorFly ensures your
+                favorite food is delivered right when you need it. Serving Bayelsa,
+                we're dedicated to making meal times more convenient and enjoyable.<br />
+                <br />
+                <b>What Sets Us Apart:</b><br />
+                Swift Delivery: Say goodbye to waiting! With our lightning-fast
+                same-day delivery within 30 minutes, your purchases arrive at your
+                doorstep promptly.<br />
+                <br />
+                <b>Rewarding Experience:</b> Our loyalty programs, including shopper
+                rewards and exclusive offers, make shopping with us an engaging and
+                rewarding experience.<br />
+                <br />
+                <b>Secure Transactions:</b> Shop with confidence knowing that your
+                transactions are secure and protected.<br />
+                <br />
+                <b>Our Mission:</b><br />
+                At FlavorFly is to revolutionize the food delivery experience by
+                providing fast, reliable, and convenient service that connects
+                customers with their favorite local restaurants. We are committed to
+                delivering fresh and delicious meals within 30 minutes, enhancing the
+                way people enjoy food by offering seamless online ordering, real-time
+                tracking, and secure payments. We strive to be the leading food
+                delivery service in Bayelsa, dedicated to customer satisfaction and
+                the success of our restaurant partners.<br />
+                <br />
+                <b>Why Choose FlavorFly.com.ng?</b><br />
+                <b>Efficiency:</b> We prioritize swift deliveries and efficiency,
+                ensuring you receive your orders on time, every time.<br />
+                <b>Reliability:</b> Count on us for reliable services and a
+                hassle-free shopping experience.<br />
+                <b>Innovation:</b> We're constantly evolving to meet your needs and
+                offer the latest trends and products.<br />
+                Welcome to FlavorFly.com.ng, where shopping becomes a leap forward into
+                convenience and satisfaction!
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="foot-panel1">Back to Top</div>
+        <div class="foot-panel2">
+            <ul>
+                <h3>Get to Know Us</h3>
+                <a>About Us</a>
+                <a>Careers</a>
+                <a>Press Releases</a>
+                <a>FlavorFly delivery accuracy</a>
+            </ul>
+            <ul>
+                <h3>Connect with Us</h3>
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+            </ul>
+            <ul>
+                <h3>Make Money with Us</h3>
+                <a>Work & sell on FlavorFly</a>
+                <a>Sell under BiteNow Accelerator</a>
+                <a>Protect and Build Your Brand</a>
+                <a>FlavorFly all India Selling</a>
+                <a>Supply to FlavorFly</a>
+                <a>Become an Affiliate</a>
+                <a>Fulfilment by BiteNow</a>
+                <a>Advertise Your Products</a>
+                <a>Razor Pay on Merchants</a>
+            </ul>
+            <ul>
+                <h3>Let Us Help You</h3>
+                <a>Your Account</a>
+                <a>Returns Centre</a>
+                <a>Recalls and Product Safety Alerts</a>
+                <a>100% Purchase Protection</a>
+                <a>Fast delivery</a>
+                <a>FlavorFly App Download</a>
+                <a>Help</a>
+                <a>Fulfilment by FlavorFly</a>
+            </ul>
+        </div>
+        <div class="foot-panel3">
+            <div class="logo"></div>
+        </div>
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use & Sale</a>
+                <a>Privacy Notice</a>
+            </div>
+            <div class="copyright">
+                © 1996-2024, BiteNow.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="restaurent.js"></script>
+
+
+
+
+</body>
+
+</html>

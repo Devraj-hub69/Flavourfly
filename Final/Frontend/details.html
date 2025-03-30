@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food details</title>
+</head>
+<body>
+    <!-- <div id="foodlist"></div>
+    <div id="details">
+
+    </div>
+    <script src="data.js"></script> -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; gap: 20px; }
+        .food-list { width: 40%; }
+        .food-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .food-box img { max-width: 100%; border-radius: 10px; }
+        .food-details { width: 60%; border: 1px solid #ddd; padding: 20px; border-radius: 10px; display: none; }
+        .food-details img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="food-list" id="foodList"></div>
+        <div class="food-details" id="foodDetails"></div>
+    </div>
+
+    <script>
+        async function fetchFoodData() {
+            try {
+                let response = await fetch("http://localhost:7070/api/secondproducts"); // API call
+                let result = await response.json();
+        
+                console.log("Fetched data:", result); // Debugging: Check API response
+        
+                if (!result.products || !Array.isArray(result.products)) {
+                    throw new Error("API response is not an array: " + JSON.stringify(result));
+                }
+        
+                displayFoodList(result.products); // Extract "products" array
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+        
+        
+
+        const foodList = document.getElementById("foodList");
+        const foodDetails = document.getElementById("foodDetails");
+
+        function displayFoodList(food_suggestions) {
+            foodList.innerHTML = ""; // Clear previous content
+            food_suggestions.forEach(food => {
+                let foodBox = document.createElement("div");
+                foodBox.className = "food-box";
+                foodBox.innerHTML = `
+                    <h3>${food.name}</h3>
+                    <img src="${food.image_url}" alt="${food.name}">
+                `;
+                foodBox.addEventListener("click", () => showFoodDetails(food));
+                foodList.appendChild(foodBox);
+            });
+        }
+
+        function showFoodDetails(food) {
+            foodDetails.innerHTML = `
+                <h2>${food.name}</h2>
+                <img src="${food.image_url || 'https://via.placeholder.com/150'}" alt="${food.name}">
+                <p><strong>Category:</strong> ${food.category || 'N/A'}</p>
+                <p><strong>Price:</strong> $${food.price ? food.price.toFixed(2) : 'N/A'}</p>
+                <p><strong>Rating:</strong> ${food.rating ? food.rating + '/5' : 'No rating available'}</p>
+                <p><strong>Ingredients:</strong> ${Array.isArray(food.ingredients) ? food.ingredients.join(", ") : 'Not listed'}</p>
+                <p><strong>Recommended For:</strong> ${Array.isArray(food.recommended_for) ? food.recommended_for.join(", ") : 'No recommendations'}</p>
+            `;
+            foodDetails.style.display = "block";
+        }
+
+        fetchFoodData(); // Fetch data when the page loads
+    </script>
+</body>
+</html>
+
+</body>
+</html>

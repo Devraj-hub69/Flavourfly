@@ -1,0 +1,60 @@
+.food-box {
+    height: 650px;
+    width: 950px;
+    border: 2px solid white ;
+    align-items: center;
+    background-color: azure;
+    border-radius: 20px;
+    margin: auto;
+}
+.pagination>button{
+    background-color:blue;
+    color: wheat;
+    height: 50px;
+    width: 150px;
+    font-size: larger;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.pagination>button:active{
+    background-color: rgb(1, 1, 44);
+}
+.pagination{
+    margin-left: 700px;
+    margin-top: 30px;
+}
+.food-box>img {
+    height: 300px;
+    width: 500px;
+    margin-left: 240px;
+    border-radius: 20px;
+}
+
+.food-box>p {
+    margin-left: 240px;
+}
+.food-box>h1,h3{
+    margin-left: 240px;
+}
+.food-box button {
+    
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: yellow;
+    color: blue;
+    font-size: larger;
+    font-weight: 600;
+    cursor: pointer;
+    margin:10px;
+    border: none;
+    /* margin-left: 285px; */
+}
+body{
+    background-color: rgb(193, 193, 193);
+}
+#button1{
+    margin-left: 340px;
+}

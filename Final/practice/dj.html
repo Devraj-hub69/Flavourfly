@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Cookie Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="name"></h2>
+        <p><strong>Category:</strong> <span id="category"></span></p>
+        <p><strong>Price:</strong> $<span id="price"></span></p>
+        <p><strong>Rating:</strong> <span id="rating"></span>/5</p>
+        <p><strong>Ingredients:</strong> <span id="ingredients"></span></p>
+        <p><strong>Recommended For:</strong> <span id="recommended"></span></p>
+        <img id="image" src="" alt="Product Image">
+    </div>
+
+    <script>
+        const product = {
+            id: 45,
+            category: "Cookies",
+            name: "Chocolate Chip Cookies",
+            price: 3.49,
+            rating: 4.1,
+            ingredients: ["Butter", "Flour", "Egg", "Chocolate chips"],
+            recommended_for: ["Food Lovers", "Gourmet Enthusiasts"],
+            image_url: "https://i.pinimg.com/originals/e9/53/e0/e953e03e6c88cdf9b7f85be7952d7534.jpg"
+        };
+
+        document.getElementById("name").textContent = product.name;
+        document.getElementById("category").textContent = product.category;
+        document.getElementById("price").textContent = product.price.toFixed(2);
+        document.getElementById("rating").textContent = product.rating;
+        document.getElementById("ingredients").textContent = product.ingredients.join(", ");
+        document.getElementById("recommended").textContent = product.recommended_for.join(", ");
+        document.getElementById("image").src = product.image_url;
+    </script>
+</body>
+</html>

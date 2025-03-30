@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; gap: 20px; }
+        .food-list { width: 40%; }
+        .food-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .food-box img { max-width: 100%; border-radius: 10px; }
+        .food-details { width: 60%; border: 1px solid #ddd; padding: 20px; border-radius: 10px; display: none; }
+        .food-details img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="food-list" id="foodList"></div>
+        <div class="food-details" id="foodDetails"></div>
+    </div>
+
+    <script>
+        const food_suggestions = [
+            {
+                "id": 1,
+                "category": "Pizza",
+                "name": "Margherita Pizza",
+                "price": 12.99,
+                "rating": 2.1,
+                "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Basil"],
+                "recommended_for": ["Food Lovers", "Gourmet Enthusiasts"],
+                "image_url": "https://www.acouplecooks.com/wp-content/uploads/2022/10/Margherita-Pizza-093.jpg"
+            },
+            {
+                "id": 2,
+                "category": "Pizza",
+                "name": "Pepperoni Pizza",
+                "price": 14.99,
+                "rating": 3.2,
+                "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Pepperoni"],
+                "recommended_for": ["Food Lovers", "Gourmet Enthusiasts"],
+                "image_url": "https://media01.stockfood.com/largepreviews/NDIxMjk0ODk4/13590158-A-thin-crust-pepperoni-pizza-with-a-slice-lifted-and-cheese-stretching.jpg"
+            }
+        ];
+
+        const foodList = document.getElementById("foodList");
+        const foodDetails = document.getElementById("foodDetails");
+
+        function displayFoodList() {
+            food_suggestions.forEach(food => {
+                let foodBox = document.createElement("div");
+                foodBox.className = "food-box";
+                foodBox.innerHTML = `
+                    <h3>${food.name}</h3>
+                    <img src="${food.image_url}" alt="${food.name}">
+                `;
+                foodBox.addEventListener("click", () => showFoodDetails(food));
+                foodList.appendChild(foodBox);
+            });
+        }
+
+        function showFoodDetails(food) {
+            foodDetails.innerHTML = `
+                <h2>${food.name}</h2>
+                <img src="${food.image_url}" alt="${food.name}">
+                <p><strong>Category:</strong> ${food.category}</p>
+                <p><strong>Price:</strong> $${food.price.toFixed(2)}</p>
+                <p><strong>Rating:</strong> ${food.rating}/5</p>
+                <p><strong>Ingredients:</strong> ${food.ingredients.join(", ")}</p>
+                <p><strong>Recommended For:</strong> ${food.recommended_for.join(", ")}</p>
+            `;
+            foodDetails.style.display = "block";
+        }
+
+        displayFoodList();
+    </script>
+</body>
+</html>

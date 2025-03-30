@@ -1,0 +1,518 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  margin-top: 110px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Ensure proper height for the header */
+  background-color: white; /* Keep it distinct from the background */
+  z-index: 1000; /* Place it above other content */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/014/062/820/original/black-and-white-endless-seamless-pattern-of-food-and-snack-items-icons-set-for-restaurant-bar-cafe-hot-dog-ice-cream-greens-chicken-fries-eggs-pizza-fish-canned-food-eggs-the-background-vector.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1; /* Adjust the opacity as needed */
+  z-index: -1;
+}
+
+#flavorfly-logo {
+  margin-left: 60px;
+  margin-top: 7px;
+}
+#fixed-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing between elements */
+  align-items: center;
+  padding: 0 10px; /* Adjust padding for spacing */
+}
+
+#search-container {
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  display: inline-block;
+  width: 60%;
+}
+
+#search-container input {
+  margin-top: 0px;
+  margin-left: 79px;
+  padding-left: 20px;
+  border: 1px solid rgba(160, 159, 159, 0.663);
+  border-radius: 30px;
+  width: 780px;
+  height: 34px;
+  font-size: 13px;
+}
+#search-container button {
+  position: absolute;
+  top: 25%;
+  /* right: 8px; */
+  margin-left: 840px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#search-container button {
+  color: rgba(160, 159, 159, 0.663);
+}
+#search-container button i {
+  font-size: 20px;
+}
+#search-container input:focus {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
+  border-color: transparent;
+}
+/* debouncing */
+#search-container {
+  position: relative; /* Positions suggestions relative to the search container */
+}
+
+#search-suggestions {
+  position: absolute;
+  /* top: calc(100% + 50px); Positions suggestions just below the input */
+  left: 0;
+  width: 760px; /* Matches the input field width */
+  margin-left: 11px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Ensures it appears above other elements */
+  max-height: 200px; /* Adds a scrollable height if needed */
+  overflow-y: hidden; /* Enables scrolling if there are too many suggestions */
+  display: none; /*Hides suggestions by default */
+}
+
+#search-suggestions:hover {
+  overflow-y: scroll; /* Show scrollbar only when hovering over the container */
+}
+/* Custom styling for scrollbar in Webkit-based browsers (Chrome, Safari, etc.) */
+#search-suggestions::-webkit-scrollbar {
+  width: 8px; /* Define scrollbar width */
+}
+#search-suggestions::-webkit-scrollbar-thumb {
+  background: #ccc; /* Scrollbar thumb color */
+  border-radius: 4px; /* Rounded edges for the scrollbar thumb */
+}
+#search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Darker color on hover */
+}
+#search-suggestions::-webkit-scrollbar-track {
+  background: transparent; /* Scrollbar track background */
+}
+.suggestion {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+#user-login {
+  margin-left: 130px;
+  margin-top: 30px;
+  display: flex;
+}
+/* #user-login {
+  position: absolute; 
+  top: 50%; 
+  right: -400px; 
+  transform: translateY(-50%); 
+  display: flex;
+} */
+#user-login i {
+  font-size: 30px;
+  color: gray;
+}
+#user-login i:hover {
+  color: red;
+}
+#user-login nav {
+  margin-top: -8px;
+  margin-left: 15px;
+  color: rgb(128, 128, 128);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: small;
+}
+#user-login nav a {
+  text-decoration: none;
+  color: gray;
+}
+#user-login nav ::after {
+  /* content: "|"; */
+  margin: 5px;
+  margin-right: -5px;
+  color: rgb(128, 128, 128); /* Match the separator color to the link color */
+}
+#user-login a:last-child::after {
+  content: none; /* Remove the separator after the last link */
+}
+#user-login > nav:first-child ::after {
+  margin-right: 5px;
+}
+#user-login > nav:last-child {
+  margin-left: 10px; 
+}
+#user-login nav a:hover {
+  color: black;
+}
+.sugg{
+  margin-top: -15px;
+}
+
+.carousel-container {
+  width: 1000px; /* Matches the image width */
+  height: 500px; /* Matches the image height */
+  margin-top: 2px;
+  margin-left: 260px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 500px; 
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; Ensures the image fits within the dimensions */
+  object-position: center;
+}
+
+.explore-now{
+  position: absolute;
+  top: 67%;
+  left: 12%;
+  transform: translateX(-50%);
+  padding: 10px 40px;
+  background-color: rgb(236, 48, 11);
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.explore-now:hover {
+  background-color: orange;
+}
+.order-now {
+  position: absolute;
+  top: 65%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  padding: 10px 40px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.order-now:hover {
+  background-color: orangered;
+}
+
+#slider-container {
+  width: 100%;
+  margin: auto; 
+  position: relative;
+  overflow: hidden; /* Disable scrolling */
+  background-color: #F8F8F8;
+  /* border: 2px solid #ccc; */
+  border-radius: 10px;
+}
+
+.fslider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.foodrow-slider{
+  margin-top: 100px;
+}
+.foodrow-slider h1 {
+  color: brown;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  /* margin-left: 30px; */
+  font-family: cursive;
+
+}
+#foodrow-slider > div {
+  margin: 20px;
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 100%;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+#foodrow-slider > div > img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  border: 1px solid black;
+}
+select{
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  border: 1px solid rgb(165, 164, 164);
+  /* background-color: thistle; */
+  /* border-top:none ; */
+  margin: 20px;
+  color: brown;
+  font-size: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+select:hover {
+  background-color: rgb(251, 248, 248);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* footer */
+.bgf1div{
+  background-color: #f5f5f5;
+  
+}
+.fs1text{
+  margin: 50px;
+  color: #8d8d8d;
+}
+.fs1h1{
+  color: brown;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px;
+}
+
+footer{
+  margin-top: 15px;
+}
+.foot-panel1{
+  background-color: #37475a;
+  color:white;
+  height:50px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.foot-panel2{
+  background-color: #222f3d;
+  color: #f3f3f3;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+}
+ul{
+  margin-top: 20px;
+}
+ul a{
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 10px;
+  color: #dddddd;
+}
+.foot-panel3{
+  background-color: #222f3d;
+  color: white;
+  border-top: 0.5px solid white;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  background-size: cover;
+  height:50px;
+  width: 100px;
+}
+.foot-panel4{
+  background-color: #0f1111;
+  color: antiquewhite;
+  height:100px;
+
+}
+.pages{
+  font-size: 0.7rem;
+  text-align: center;
+  padding-top: 25px;
+}
+.copyright{
+  padding-top: 5px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* Restaurant section */
+#section2{
+  color: brown;
+  margin-top: 100px;
+  margin-left: 140px;
+  font-family: cursive
+}
+/* Container styles */
+#restaurant-container {
+  margin-left: 140px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+/* Restaurant card styles */
+.restaurant {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.restaurant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant h3 {
+  font-size: 1.5rem;
+  margin: 15px 0 5px;
+  color: #333;
+}
+
+.restaurant p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+#load-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto;
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#load-more-btn:hover {
+  background-color: #0056b3;
+}
+/* Skeleton Loader Styles */
+.skeleton-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skeleton-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 200px;
+  background-color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.skeleton-text {
+  height: 20px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #cfcfcf;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+
